@@ -1,0 +1,100 @@
+@HotelListing.Api_HostAddress = https://localhost:7146
+
+@apiKey =sakfdlalsdfjla=jslkdfhaoishfoiweht93
+
+GET {{HotelListing.Api_HostAddress}}/api/countries
+X-Api-key:{{apiKey}}
+# Authorization: Basic bmV3dXNlcjFAZXhhbXBsZS5jb206UGFzc3dvcmRAMzQ1
+###
+
+POST {{HotelListing.Api_HostAddress}}/api/countries
+Content-Type: application/json
+
+{
+   "Name":"United States_Updated",
+   "ShortName":"US"
+}
+
+###
+
+@countryId=4
+DELETE {{HotelListing.Api_HostAddress}}/api/countries/{{countryId}}
+
+###
+
+GET {{HotelListing.Api_HostAddress}}/api/countries/{{countryId}}
+
+###
+
+PUT {{HotelListing.Api_HostAddress}}/api/countries/{{countryId}}
+Content-Type: application/json
+
+{ 
+  "CountryId":4,
+  "Name":"United States",
+  "ShortName":"US"
+}
+
+###
+
+GET {{HotelListing.Api_HostAddress}}/api/hotels
+
+###
+
+POST {{HotelListing.Api_HostAddress}}/api/hotels
+Content-Type: application/json
+
+{
+  "name": "Hotel Adas67687",
+  "address": "123 Main Stdsa",
+  "rating": 5.0,
+  "CountryId": 4
+
+}
+
+###
+
+@id=9
+DELETE {{HotelListing.Api_HostAddress}}/api/hotels/{{id}}
+
+###
+
+GET {{HotelListing.Api_HostAddress}}/api/hotels/{{id}}
+
+###
+
+PUT {{HotelListing.Api_HostAddress}}/api/hotels/{{id}}
+Content-Type: application/json
+
+{
+  "id": 9,
+  "name": "Hotel Adas",
+  "address": "Main Stds",
+  "rating": 4.00,
+  "CountryId": 4
+
+}
+
+###
+POST {{HotelListing.Api_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "email":"newuser1@example.com",
+  "Password":"Password@345",
+  "firstName":"NewName",
+  "lastName":"NewLastName"
+ 
+}
+
+###
+
+POST {{HotelListing.Api_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email":"newuser1@example.com",
+  "Password":"Password@345"
+}
+
+###
