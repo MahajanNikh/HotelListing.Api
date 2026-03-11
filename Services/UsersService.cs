@@ -47,6 +47,12 @@ public class UsersService(UserManager<ApplicationUser> userManager) : IUsersServ
         {
             return Result<string>.Failure(new Error(ErrorCodes.BadRequest, "Invalid Credentials"));
         }
-        return Result<string>.Success("Login Succesful.");
+        return Result<string>.Success("Login Successful.");
     }
+
+    //private async Task<string> GenerateToken(ApplicationUser user)
+    //{
+    //    //Set basic 
+
+    //}
 }
