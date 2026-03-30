@@ -6,6 +6,7 @@ using HotelListing.Api.MappingProfiles;
 using HotelListing.Api.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -24,6 +25,7 @@ builder.Services.AddDbContext<HotelListingDbContext>(options =>
 
 //For Acessing EndPoints
 builder.Services.AddIdentityApiEndpoints<ApplicationUser>()
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<HotelListingDbContext>();
 
 builder.Services.AddAuthentication(option =>

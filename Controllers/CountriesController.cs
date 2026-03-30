@@ -7,6 +7,8 @@ namespace HotelListing.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
+
 public class CountriesController(ICountriesService countriesService) : BaseApiController
 {
     // GET: api/Countries
@@ -20,6 +22,7 @@ public class CountriesController(ICountriesService countriesService) : BaseApiCo
 
     // GET: api/Countries/5
     [HttpGet("{id}")]
+    [Authorize(Roles = "Administrator")]
     public async Task<ActionResult<GetCountryDto>> GetCountry(int id)
     {
         var result = await countriesService.GetCountryAsync(id);
@@ -36,6 +39,7 @@ public class CountriesController(ICountriesService countriesService) : BaseApiCo
 
     // POST: api/Countries
     [HttpPost]
+    [Authorize(Roles = "Administrator")]
     public async Task<ActionResult<GetCountryDto>> PostCountry(CreateCountryDto countryDto)
     {
         var result = await countriesService.CreateCountryAsync(countryDto);
@@ -49,6 +53,7 @@ public class CountriesController(ICountriesService countriesService) : BaseApiCo
 
     // DELETE: api/Countries/5
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Administrator")]
     public async Task<IActionResult> DeleteCountry(int id)
     {
         var result = await countriesService.DeleteCountryAsync(id);

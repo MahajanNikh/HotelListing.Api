@@ -3,9 +3,11 @@
 @apiKey =sakfdlalsdfjla=jslkdfhaoishfoiweht93
 
 GET {{HotelListing.Api_HostAddress}}/api/countries
-X-Api-key:{{apiKey}}
+# X-Api-key:{{apiKey}}
 # Authorization: Basic bmV3dXNlcjFAZXhhbXBsZS5jb206UGFzc3dvcmRAMzQ1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiOGZmYTcxZS02ZmYwLTQwOTgtOGU5Zi03NWYzMjc4NjU1MDciLCJlbWFpbCI6IkFkbWluQGV4YW1wbGUuY29tIiwianRpIjoiMTE1YTMzMzctNDc3ZS00MmRkLThkZmYtNTgxM2M1MWViMTZlIiwibmFtZSI6IkFkbWluTGFzdE5hbWUgQWRtaW5GaXJzdE5hbWUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzc0ODQ1OTM5LCJpc3MiOiJIb3RlbExpc3RpbmdBUEkiLCJhdWQiOiJIb3RlbExpc3RpbmdBUElDbGllbnQifQ.TUHKJz4fyZwiDmQBgCNjVnx32oygx18gGlMZkUkFevE
 ###
+
 
 POST {{HotelListing.Api_HostAddress}}/api/countries
 Content-Type: application/json
@@ -95,6 +97,10 @@ Content-Type: application/json
 {
   "email":"newuser1@example.com",
   "Password":"Password@345"
+
 }
 
+
 ###
+  # "email":"Admin@example.com",
+  # "Password":"Password@345"
